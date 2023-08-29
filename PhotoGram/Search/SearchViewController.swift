@@ -13,6 +13,8 @@ class SearchViewController: BaseViewController {
     
     let imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
     
+    var delegate: ImageDataDelegate?
+    
     override func loadView() {
         self.view = mainView
     }
@@ -56,7 +58,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         print(imageList[indexPath.item])
         
-        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "선상혁"])
+        //
+        delegate?.receiveImage(image: UIImage(systemName: imageList[indexPath.item])!)
+        
+        
+        //Notification을 통한 값전달
+        //NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "선상혁"])
         
         dismiss(animated: true)
     }
