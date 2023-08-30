@@ -65,16 +65,16 @@ class AddView: BaseView {
         }
         searchButton.snp.makeConstraints { make in
             make.bottom.trailing.equalTo(photoImageView)
-            make.size.equalTo(50)
+            make.height.equalTo(50)
         }
         searchProtocolButton.snp.makeConstraints { make in
             make.bottom.leading.equalTo(photoImageView)
-            make.size.equalTo(50)
+            make.height.equalTo(50)
         }
         dateButton.snp.makeConstraints { make in
             make.top.equalTo(searchButton.snp.bottom).offset(10)
             make.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
-            make.size.equalTo(50)
+            make.height.equalTo(50)
         }
         titleButton.snp.makeConstraints { make in
             make.top.equalTo(dateButton.snp.bottom).offset(10)

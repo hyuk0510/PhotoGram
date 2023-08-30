@@ -29,6 +29,8 @@
 		D8E3B0A12A9DB54F00717539 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0A02A9DB54F00717539 /* TitleViewController.swift */; };
 		D8E3B0A32A9DBACE00717539 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0A22A9DBACE00717539 /* ClosureViewController.swift */; };
 		D8E3B0A52A9DC75000717539 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0A42A9DC75000717539 /* WebViewController.swift */; };
+		D8E3B0D22A9EC73900717539 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0D12A9EC73900717539 /* APIService.swift */; };
+		D8E3B0D42A9EEBD300717539 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0D32A9EEBD300717539 /* URLSessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		D8E3B0A02A9DB54F00717539 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		D8E3B0A22A9DBACE00717539 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		D8E3B0A42A9DC75000717539 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D8E3B0D12A9EC73900717539 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D8E3B0D32A9EEBD300717539 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 		D8E3B0342A9C1D6800717539 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				D8E3B0D02A9EC72600717539 /* Network */,
 				D8E3B0622A9D7BBE00717539 /* Extension */,
 				D8E3B0542A9C2FC500717539 /* Add */,
 				D8E3B04F2A9C271F00717539 /* Search */,
@@ -191,6 +196,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8E3B0D02A9EC72600717539 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D8E3B0D12A9EC73900717539 /* APIService.swift */,
+				D8E3B0D32A9EEBD300717539 /* URLSessionViewController.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,12 +317,14 @@
 				D8E3B0682A9D7DBD00717539 /* DateViewController.swift in Sources */,
 				D8E3B05C2A9C37F500717539 /* SearchCollectionViewCell.swift in Sources */,
 				D8E3B0662A9D7C7F00717539 /* DateView.swift in Sources */,
+				D8E3B0D42A9EEBD300717539 /* URLSessionViewController.swift in Sources */,
 				D8E3B04E2A9C242300717539 /* BaseViewController.swift in Sources */,
 				D8E3B0582A9C337400717539 /* SearchView.swift in Sources */,
 				D8E3B0A52A9DC75000717539 /* WebViewController.swift in Sources */,
 				D8E3B0532A9C2EB400717539 /* BaseView.swift in Sources */,
 				D8E3B0362A9C1D6800717539 /* AppDelegate.swift in Sources */,
 				D8E3B0382A9C1D6800717539 /* SceneDelegate.swift in Sources */,
+				D8E3B0D22A9EC73900717539 /* APIService.swift in Sources */,
 				D8E3B0A12A9DB54F00717539 /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

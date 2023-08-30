@@ -16,7 +16,7 @@ class TitleViewController: BaseViewController {
     }()
     
     //Closure - 1
-    var completionHandler: ((String, Int, Bool) -> Void)?
+    var completionHandler: ((String) -> Void)?
     
     override func configureView() {
         super.configureView()
@@ -27,7 +27,7 @@ class TitleViewController: BaseViewController {
     
     @objc func doneButtonPressed() {
         
-        completionHandler?(textfield.text!, 2, true)
+        completionHandler?(textfield.text!)
         
         navigationController?.popViewController(animated: true)
     }
@@ -43,6 +43,6 @@ class TitleViewController: BaseViewController {
         super.viewDidDisappear(animated)
         
         //Closure - 2
-        completionHandler?(textfield.text!, 5, false)
+        completionHandler?(textfield.text!)
     }
 }
