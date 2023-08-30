@@ -7,6 +7,7 @@
 
 import UIKit
 import SeSACPhotoFramework
+import Kingfisher
 
 //Protocol 값 전달 1.
 protocol PassDataDelegate {
@@ -20,6 +21,7 @@ protocol ImageDataDelegate {
 class AddViewController: BaseViewController {
 
     let mainView = AddView()
+    let picker = UIImagePickerController()
     
     override func loadView() { //viewDidLoad보다 먼저 호출됨, super 메서드 호출 X
         self.view = mainView
@@ -28,16 +30,11 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        APIService.shared.callRequest()
         
-        ClassOpenExample.publicExample()
-        ClassPublicExample.publicExample()
-        //ClassPublicExample.internalExample()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(#function)
 
         NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
         
@@ -62,15 +59,12 @@ class AddViewController: BaseViewController {
     
     @objc func searchButtonPressed() {
         
-        let word = ["Apple", "Banana", "Cookie", "Cake", "Sky"]
-        
-        NotificationCenter.default.post(name: NSNotification.Name("RecommandKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
-        
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+        showAlert()
     }
     
     @objc func searchProtocolButtonPressed() {
         let vc = SearchViewController()
+        
         vc.delegate = self
         present(vc, animated: true)
     }
@@ -86,8 +80,8 @@ class AddViewController: BaseViewController {
         let vc = TitleViewController()
         
         //Closure - 3
-        vc.completionHandler = { title, num, bool in
-            self.mainView.titleButton.setTitle(title + "\(num)" + "\(bool)", for: .normal)
+        vc.completionHandler = { title in
+            self.mainView.titleButton.setTitle(title, for: .normal)
             print("completionHandler")
         }
         navigationController?.pushViewController(vc, animated: true)
@@ -105,7 +99,6 @@ class AddViewController: BaseViewController {
     
     override func configureView() {
         super.configureView()
-        print("Add ConfigureView")
         mainView.searchButton.addTarget(self, action: #selector(searchButtonPressed), for: .touchUpInside)
         mainView.searchProtocolButton.addTarget(self, action: #selector(searchProtocolButtonPressed), for: .touchUpInside)
         mainView.dateButton.addTarget(self, action: #selector(dateButtonPressed), for: .touchUpInside)
@@ -115,10 +108,42 @@ class AddViewController: BaseViewController {
     
     override func setConstraints() {
         super.setConstraints()
-        print("Add SetConstraints")
        
     }
-
+    
+    func showAlert() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let gallery = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { _ in
+            self.showGallery()
+        }
+        let web = UIAlertAction(title: "웹에서 검색하기", style: .default) { _ in
+            let vc = SearchViewController()
+            vc.completionHandelr = { photoURL in
+                let url = URL(string: photoURL)
+                self.mainView.photoImageView.kf.setImage(with: url)
+            }
+            self.present(vc, animated: true)
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(gallery)
+        alert.addAction(web)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
+    }
+    
+    func showGallery() {
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            return
+        }
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
+                        
+        present(picker, animated: true)
+    }
+    
 }
 
 extension AddViewController: PassDataDelegate {
@@ -130,5 +155,18 @@ extension AddViewController: PassDataDelegate {
 extension AddViewController: ImageDataDelegate {
     func receiveImage(image: UIImage) {
         mainView.photoImageView.image = image
+    }
+}
+
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.mainView.photoImageView.image = image
+        }
+        
+        dismiss(animated: true)
     }
 }

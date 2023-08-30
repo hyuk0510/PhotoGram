@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchViewController: BaseViewController {
     
     let mainView = SearchView()
     
-    let imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
+    var imageList = ["pencil", "star", "person", "star.fill", "xmark", "person.circle"]
+    var photoList: Photos = Photos(total: 0, totalPages: 0, results: [])
     
     var delegate: ImageDataDelegate?
+    var completionHandelr: ((String) -> Void)?
     
     override func loadView() {
         self.view = mainView
@@ -21,6 +24,14 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UnSplashAPIManager.unsplashRequest(query: "sky") { photos, error in
+            guard let photos = photos else { return }
+            //dump(photos)
+            self.photoList = photos
+            self.mainView.collectionView.reloadData()
+        }
+        
         
         NotificationCenter.default.addObserver(self, selector: #selector(recommandKeywordNotificationObserver(notification: )), name: NSNotification.Name("RecommandKeyword"), object: nil)
         
@@ -44,26 +55,25 @@ class SearchViewController: BaseViewController {
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageList.count
+        return photoList.results.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else {
             return UICollectionViewCell()
         }
+    
+        let url = URL(string: photoList.results[indexPath.row].urls.raw)
         
-        cell.imageView.image = UIImage(systemName: imageList[indexPath.item])
+        cell.imageView.kf.setImage(with: url)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        print(imageList[indexPath.item])
-        
+                
         //
-        delegate?.receiveImage(image: UIImage(systemName: imageList[indexPath.item])!)
-        
+        completionHandelr?(photoList.results[indexPath.row].urls.raw)
         
         //Notification을 통한 값전달
         //NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "선상혁"])

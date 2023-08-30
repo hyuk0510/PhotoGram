@@ -19,10 +19,8 @@ class BaseViewController: UIViewController {
 
     func configureView() {
         view.backgroundColor = .white
-        print("Base ConfigureView")
     }
     
     func setConstraints() {
-        print("Base setConstraints")
     }
 }

@@ -38,7 +38,7 @@ extension URLSessionViewController: URLSessionDataDelegate {
     
     //서버에서 응답이 완료가 된 이후에 호출
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print("END")
+        print("")
     }
     
 }

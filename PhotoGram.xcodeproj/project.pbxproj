@@ -31,6 +31,11 @@
 		D8E3B0A52A9DC75000717539 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0A42A9DC75000717539 /* WebViewController.swift */; };
 		D8E3B0D22A9EC73900717539 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0D12A9EC73900717539 /* APIService.swift */; };
 		D8E3B0D42A9EEBD300717539 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0D32A9EEBD300717539 /* URLSessionViewController.swift */; };
+		D8E3B0D62A9F2E4400717539 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D8E3B0D52A9F2E4400717539 /* .gitignore */; };
+		D8E3B0D92A9F2F0F00717539 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0D82A9F2F0F00717539 /* APIKey.swift */; };
+		D8E3B0DB2A9F38FE00717539 /* UnSplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0DA2A9F38FE00717539 /* UnSplashAPIManager.swift */; };
+		D8E3B0DD2A9F980900717539 /* CodableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0DC2A9F980900717539 /* CodableData.swift */; };
+		D8E3B0E02A9FA08700717539 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D8E3B0DF2A9FA08700717539 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,10 @@
 		D8E3B0A42A9DC75000717539 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D8E3B0D12A9EC73900717539 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D8E3B0D32A9EEBD300717539 /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
+		D8E3B0D52A9F2E4400717539 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D8E3B0D82A9F2F0F00717539 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		D8E3B0DA2A9F38FE00717539 /* UnSplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSplashAPIManager.swift; sourceTree = "<group>"; };
+		D8E3B0DC2A9F980900717539 /* CodableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8E3B0E02A9FA08700717539 /* Kingfisher in Frameworks */,
 				D8E3B09D2A9D9BBA00717539 /* SeSACPhotoFramework.framework in Frameworks */,
 				D8E3B04B2A9C1E1C00717539 /* SnapKit in Frameworks */,
 			);
@@ -125,6 +135,7 @@
 		D8E3B0342A9C1D6800717539 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				D8E3B0D72A9F2EEC00717539 /* Data */,
 				D8E3B0D02A9EC72600717539 /* Network */,
 				D8E3B0622A9D7BBE00717539 /* Extension */,
 				D8E3B0542A9C2FC500717539 /* Add */,
@@ -136,6 +147,7 @@
 				D8E3B0402A9C1D6A00717539 /* LaunchScreen.storyboard */,
 				D8E3B0432A9C1D6A00717539 /* Info.plist */,
 				D8E3B0A42A9DC75000717539 /* WebViewController.swift */,
+				D8E3B0D52A9F2E4400717539 /* .gitignore */,
 			);
 			path = PhotoGram;
 			sourceTree = "<group>";
@@ -203,8 +215,18 @@
 			children = (
 				D8E3B0D12A9EC73900717539 /* APIService.swift */,
 				D8E3B0D32A9EEBD300717539 /* URLSessionViewController.swift */,
+				D8E3B0DA2A9F38FE00717539 /* UnSplashAPIManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D8E3B0D72A9F2EEC00717539 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D8E3B0D82A9F2F0F00717539 /* APIKey.swift */,
+				D8E3B0DC2A9F980900717539 /* CodableData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +248,7 @@
 			name = PhotoGram;
 			packageProductDependencies = (
 				D8E3B04A2A9C1E1C00717539 /* SnapKit */,
+				D8E3B0DF2A9FA08700717539 /* Kingfisher */,
 			);
 			productName = PhotoGram;
 			productReference = D8E3B0322A9C1D6800717539 /* PhotoGram.app */;
@@ -257,6 +280,7 @@
 			mainGroup = D8E3B0292A9C1D6800717539;
 			packageReferences = (
 				D8E3B0492A9C1E1C00717539 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D8E3B0DE2A9FA08700717539 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = D8E3B0332A9C1D6800717539 /* Products */;
 			projectDirPath = "";
@@ -296,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8E3B0422A9C1D6A00717539 /* LaunchScreen.storyboard in Resources */,
+				D8E3B0D62A9F2E4400717539 /* .gitignore in Resources */,
 				D8E3B03F2A9C1D6A00717539 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +336,7 @@
 				D8E3B0512A9C274C00717539 /* SearchViewController.swift in Sources */,
 				D8E3B0A32A9DBACE00717539 /* ClosureViewController.swift in Sources */,
 				D8E3B05A2A9C365C00717539 /* BaseCollectionViewCell.swift in Sources */,
+				D8E3B0DD2A9F980900717539 /* CodableData.swift in Sources */,
 				D8E3B05E2A9CC64800717539 /* AddView.swift in Sources */,
 				D8E3B06A2A9D8E8C00717539 /* DateFormat+Extension.swift in Sources */,
 				D8E3B03A2A9C1D6800717539 /* AddViewController.swift in Sources */,
@@ -321,11 +347,13 @@
 				D8E3B04E2A9C242300717539 /* BaseViewController.swift in Sources */,
 				D8E3B0582A9C337400717539 /* SearchView.swift in Sources */,
 				D8E3B0A52A9DC75000717539 /* WebViewController.swift in Sources */,
+				D8E3B0D92A9F2F0F00717539 /* APIKey.swift in Sources */,
 				D8E3B0532A9C2EB400717539 /* BaseView.swift in Sources */,
 				D8E3B0362A9C1D6800717539 /* AppDelegate.swift in Sources */,
 				D8E3B0382A9C1D6800717539 /* SceneDelegate.swift in Sources */,
 				D8E3B0D22A9EC73900717539 /* APIService.swift in Sources */,
 				D8E3B0A12A9DB54F00717539 /* TitleViewController.swift in Sources */,
+				D8E3B0DB2A9F38FE00717539 /* UnSplashAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +571,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		D8E3B0DE2A9FA08700717539 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -550,6 +586,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D8E3B0492A9C1E1C00717539 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		D8E3B0DF2A9FA08700717539 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D8E3B0DE2A9FA08700717539 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
