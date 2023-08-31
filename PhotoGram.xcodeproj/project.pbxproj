@@ -36,6 +36,8 @@
 		D8E3B0DB2A9F38FE00717539 /* UnSplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0DA2A9F38FE00717539 /* UnSplashAPIManager.swift */; };
 		D8E3B0DD2A9F980900717539 /* CodableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0DC2A9F980900717539 /* CodableData.swift */; };
 		D8E3B0E02A9FA08700717539 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D8E3B0DF2A9FA08700717539 /* Kingfisher */; };
+		D8E3B0E32AA01A6F00717539 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0E22AA01A6F00717539 /* HomeViewController.swift */; };
+		D8E3B0E52AA01A7700717539 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E3B0E42AA01A7700717539 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		D8E3B0D82A9F2F0F00717539 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		D8E3B0DA2A9F38FE00717539 /* UnSplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSplashAPIManager.swift; sourceTree = "<group>"; };
 		D8E3B0DC2A9F980900717539 /* CodableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableData.swift; sourceTree = "<group>"; };
+		D8E3B0E22AA01A6F00717539 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D8E3B0E42AA01A7700717539 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 		D8E3B0342A9C1D6800717539 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				D8E3B0E12AA01A5700717539 /* Home */,
 				D8E3B0D72A9F2EEC00717539 /* Data */,
 				D8E3B0D02A9EC72600717539 /* Network */,
 				D8E3B0622A9D7BBE00717539 /* Extension */,
@@ -227,6 +232,15 @@
 				D8E3B0DC2A9F980900717539 /* CodableData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		D8E3B0E12AA01A5700717539 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D8E3B0E22AA01A6F00717539 /* HomeViewController.swift */,
+				D8E3B0E42AA01A7700717539 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +352,7 @@
 				D8E3B05A2A9C365C00717539 /* BaseCollectionViewCell.swift in Sources */,
 				D8E3B0DD2A9F980900717539 /* CodableData.swift in Sources */,
 				D8E3B05E2A9CC64800717539 /* AddView.swift in Sources */,
+				D8E3B0E32AA01A6F00717539 /* HomeViewController.swift in Sources */,
 				D8E3B06A2A9D8E8C00717539 /* DateFormat+Extension.swift in Sources */,
 				D8E3B03A2A9C1D6800717539 /* AddViewController.swift in Sources */,
 				D8E3B0682A9D7DBD00717539 /* DateViewController.swift in Sources */,
@@ -352,6 +367,7 @@
 				D8E3B0362A9C1D6800717539 /* AppDelegate.swift in Sources */,
 				D8E3B0382A9C1D6800717539 /* SceneDelegate.swift in Sources */,
 				D8E3B0D22A9EC73900717539 /* APIService.swift in Sources */,
+				D8E3B0E52AA01A7700717539 /* HomeView.swift in Sources */,
 				D8E3B0A12A9DB54F00717539 /* TitleViewController.swift in Sources */,
 				D8E3B0DB2A9F38FE00717539 /* UnSplashAPIManager.swift in Sources */,
 			);

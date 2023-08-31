@@ -17,6 +17,10 @@ class DateViewController: BaseViewController {
     override func loadView() {
         self.view = mainView
     }
+    
+    deinit {
+        print("deinit", self)
+    }
         
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)

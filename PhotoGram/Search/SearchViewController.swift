@@ -25,7 +25,7 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UnSplashAPIManager.unsplashRequest(query: "sky") { photos, error in
+        UnSplashAPIManager.unsplashRequest(query: "person") { photos, error in
             guard let photos = photos else { return }
             //dump(photos)
             self.photoList = photos
