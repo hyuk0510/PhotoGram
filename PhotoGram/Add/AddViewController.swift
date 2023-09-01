@@ -30,7 +30,7 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+//        APIService.shared.callRequest(query: "apple")
     }
     
     deinit {
